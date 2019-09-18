@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+32_TP_JS-AJAX_Meteo.html : lecture par ajax d'un Web Service Météo
+                            https://www.prevision-meteo.ch/
+Didier Bonneau CDI Afpa Créteil
+-->
+<html>
+    <head>
+        <title>32_TP_JS-Ajax_Meteo</title>
+        <link type="text/css" rel="stylesheet" href="32_TP_JS-AJAX.css" />
+        <script type="text/javascript" src="fonctionsAjax.js"></script>
+        <script type="text/javascript" src="32_TP_JS-AJAX_Meteo.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>TP Ajax Affichage de la Météo d'une ville</h1>
+        <h3>32_TP_JS-Ajax_Meteo : Requête asynchrone avec reponse JSON</h3>
+        <h4>Interrogation du web service https://www.prevision-meteo.ch/services/json/creteil</h4>
+        <div id="contenu">
+            <h2>Météo de la ville de Créteil</h2>
+            <br/>
+            <button onclick="requete();" >Envoyer la requête</button>
+            <br/><br/>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>Température</th>
+                        <th>icon</th>
+                    </tr>
+                </thead>
+                <tfoot id="chargeur" style="display: none">
+                    <tr>
+                        <td colspan="3"><img src="ajax-loader.gif" alt="loadeur"/></td>
+                    </tr>
+                </tfoot>
+                <tbody id="result"></tbody>
+            </table>
+        </div>
+    </body>
+</html>
